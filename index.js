@@ -30,8 +30,13 @@ function output(input) {
     // Search for exact match in `prompts`
     product = compare(prompts, replies, text);
   } else if (text.match(/thank/gi)) {
-    product = "I require no thanks"
-  } 
+    product = "You're welcome!"
+  } else if (text.match(/(corona|covid|virus)/gi)) {
+    // If no match, check if message contains `coronavirus`
+    product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
+  } else {
+    // If all else fails: random alternative
+    product = alternative[Math.floor(Math.random() * alternative.length)];
   }
 
   // Update DOM
@@ -85,6 +90,7 @@ function addChat(input, product) {
   // Fake delay to seem "real"
   setTimeout(() => {
     botText.innerText = `${product}`;
+    textToSpeech(product)
   }, 2000
   )
 
