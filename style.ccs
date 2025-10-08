@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	background-color: rgb(0, 0, 0;
+	background-color: Black;
 	height: 100%;
 	margin: 0;
 }
